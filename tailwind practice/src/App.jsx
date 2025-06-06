@@ -7,8 +7,8 @@ import { Apply } from "./Apply"
 
 function App(){
   return <div className="grid grid-cols-10">
-    <Tasks className="col-span-2 h-screen"/>
-    <div className="col-span-8 grid grid-cols-11  auto-rows-min">
+    <Tasks className="col-span-1 h-screen grid items-start md:block justify-items-center md:justify-items-normal md:col-span-2 auto-rows-min"/>
+    <div className="col-span-8 grid grid-cols-11 auto-rows-min">
       <img src="goku.webp" alt="pic here" className="h-25 w-screen col-span-11"/>
       <Info className="col-span-3 mx-10  h-90 -my-5 "/>
       <div className="col-span-4 grid grid-cols-1 my-7">

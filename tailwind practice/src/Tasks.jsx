@@ -1,8 +1,5 @@
 import { Card } from "./Card"
 import './App.css'
-import { useState } from "react"
-
-export const [Dark, setDark] = useState(false);
 
 const tasks = [
 

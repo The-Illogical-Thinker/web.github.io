@@ -1,5 +1,6 @@
 import { Card } from "./Card"
 import './App.css'
+import { useState } from "react"
 
 const tasks = [
 
@@ -42,19 +43,32 @@ const tasks = [
 ]
 
 const Task = ({task, icon, onclick}) => {
-    return <div className={`ml-2 bg-white hover:bg-gray-400 hover:text-black items-center rounded-2xl my-6 mx-2 px-2 h-16`}>
+
+
+    return <>      
+    <div className={`ml-2 bg-white hover:bg-gray-400 hover:text-black items-center rounded-2xl my-6 mx-2 px-2 h-16`}>
       <button className="flex items-center justify-between w-full h-full cursor-pointer" onClick={onclick}>
 			<div className="col-span-4 md:block hidden">{task}</div>
 			<div className="col-span-1 w-6 h-6 mx-2 ml-0">{icon}</div>
       </button>
     </div>
+    </>
 }
 
 const taskcomponent = tasks.map(tasky => <Task key={tasky.task} task={tasky.task} icon={tasky.icon} onclick={tasky.onclick}/>)
 
 export const Tasks = ({className=""}) => {
-	return <Card className={`${className}`}>
+
+  const [sidebar, setSideBar] = useState(false);
+
+	return <>
+  <Card className={`${className} ${sidebar ? "visible" : "invisible"}`}>
+    <button onClick={() => setSideBar(!sidebar)} className="visible"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
 		{taskcomponent}
 	</Card>
+  </>
 }
 

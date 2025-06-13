@@ -1,9 +1,10 @@
 import { Card } from "./Card"
 
 export function Courses({className}){
-    return <div className={`${className} relative`}>
+    return <div className={`${className} grid justify-items-center`}>
+        <div className="w-fit">
         <span className="text-2xl">Pick the right course for you</span>
-            <div className="flex justify-center my-5 gap-10">
+            <div className="flex my-5 gap-10">
                 <Card className={"bg-gray-300 h-60 w-80 grid cursor-pointer"}>
                     <div className="my-3 mx-3 text-xl">
                         JEE Courses
@@ -34,6 +35,7 @@ export function Courses({className}){
                         </svg>
                     </div>
                 </Card>
+            </div>
             </div>
     </div>
 }

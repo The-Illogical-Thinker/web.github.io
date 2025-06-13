@@ -1,7 +1,11 @@
 import { Allen } from "./Allen";
+import { Header } from "./Header";
 
 function App(){
-  return <Allen />
+  return <>
+  <Header />
+  <Allen />
+  </>
 }
 
 export default App;

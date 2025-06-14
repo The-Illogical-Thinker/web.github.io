@@ -13,6 +13,7 @@ export function Footer({className}){
     }
 
     return <div className={`bg-gray-300 h-150 grid items-center ${className}`}>
+        <div className="justify-self-center mt-10 -mb-20"><button className="border-sky-500 rounded-3xl border-2 p-4 cursor-pointer bg-sky-500 text-white w-fit hover:text-black hover:bg-white ">Read More</button></div>
         <div className=" grid grid-cols-6 mx-60">
         <div className="col-span-1">
             <Topic>

@@ -1,5 +1,5 @@
 export function Header(){
-    return <div className="grid grid-cols-15 h-15 items-center">
+    return <div className="grid grid-cols-15 h-15 items-center sticky top-0 bg-white">
         <div className="flex justify-items-center gap-7 col-span-13 items-center">
         <div className="cursor-pointer px-4 text-3xl text-blue-600 font-bold">
             Allen

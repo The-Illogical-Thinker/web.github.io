@@ -10,11 +10,11 @@ export function Header({className}){
         </Link>
         <div className="cursor-pointer peer relative">
             Courses
-            <div className="absolute opacity-0 peer-hover:opacity-100 transition-opacity duration-500 bg-white w-60 top-10 delay-100 rounded-2xl">
+            {/*<div className="absolute opacity-0 peer-hover:opacity-100 transition-opacity duration-500 bg-white w-60 top-10 delay-100 rounded-2xl">
                 <Link to="/JEE"><div className="cursor-pointer hover:bg-gray-300 p-3">JEE</div></Link>
                 <div className="cursor-pointer hover:bg-gray-300 p-3">NEET</div>
                 <div className="cursor-pointer hover:bg-gray-300 p-3">Class 6th to 10th</div>
-            </div>
+            </div>*/}
         </div>
         <div className="cursor-pointer">
             Test Series

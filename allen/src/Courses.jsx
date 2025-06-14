@@ -1,10 +1,12 @@
 import { Card } from "./Card"
+import { Link } from "react-router-dom"
 
 export function Courses({className}){
     return <div className={`${className} grid justify-items-center`}>
         <div className="w-fit">
         <span className="text-2xl">Pick the right course for you</span>
             <div className="flex my-5 gap-10">
+                <Link to="/JEE">
                 <Card className={"bg-gray-300 h-60 w-80 grid cursor-pointer"}>
                     <div className="my-3 mx-3 text-xl">
                         JEE Courses
@@ -15,6 +17,7 @@ export function Courses({className}){
                         </svg>
                     </div>
                 </Card>
+                </Link>
                 <Card className={"bg-gray-300 h-60 w-80 grid cursor-pointer"}>
                     <div className="my-3 mx-3 text-xl">
                         NEET Courses

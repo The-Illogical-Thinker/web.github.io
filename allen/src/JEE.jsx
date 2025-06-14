@@ -12,7 +12,7 @@ export function JEE(){
 
     const FeeCard = FeeCardData.map((fees, index) => <Fees key={index} type={fees.type} course={fees.course} target={fees.target} plan1={fees.plan1} plan2={fees.plan2} plan3={fees.plan3} fees={fees.fees} />)
 
-    return <div className="bg-gray-300">
+    return <div className="bg-gray-300 py-4 h-full">
         <div className="mx-80 mr-140">
             <span className="text-2xl font-semibold">Explore our JEE courses</span>
             <div className="flex gap-3 my-2">

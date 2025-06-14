@@ -1,11 +1,20 @@
-export function Header(){
-    return <div className="grid grid-cols-15 h-15 items-center sticky top-0 bg-white">
+import { Link } from "react-router-dom"
+
+export function Header({className}){
+    return <div className={`${className} grid grid-cols-15 h-15 items-center sticky top-0 bg-white`}>
         <div className="flex justify-items-center gap-7 col-span-13 items-center">
+        <Link to="/">
         <div className="cursor-pointer px-4 text-3xl text-blue-600 font-bold">
             Allen
         </div>
-        <div className="cursor-pointer">
+        </Link>
+        <div className="cursor-pointer peer relative">
             Courses
+            <div className="absolute opacity-0 peer-hover:opacity-100 transition-opacity duration-500 bg-white w-60 top-10 delay-100 rounded-2xl">
+                <Link to="/JEE"><div className="cursor-pointer hover:bg-gray-300 p-3">JEE</div></Link>
+                <div className="cursor-pointer hover:bg-gray-300 p-3">NEET</div>
+                <div className="cursor-pointer hover:bg-gray-300 p-3">Class 6th to 10th</div>
+            </div>
         </div>
         <div className="cursor-pointer">
             Test Series

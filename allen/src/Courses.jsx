@@ -18,6 +18,7 @@ export function Courses({className}){
                     </div>
                 </Card>
                 </Link>
+                <Link to={"/NEET"}>
                 <Card className={"bg-gray-300 h-60 w-80 grid cursor-pointer"}>
                     <div className="my-3 mx-3 text-xl">
                         NEET Courses
@@ -28,6 +29,8 @@ export function Courses({className}){
                         </svg>
                     </div>
                 </Card>
+                </Link>
+                <Link to={'/6th-10th'}>
                 <Card className={"bg-gray-300 h-60 w-80 grid cursor-pointer"}>
                     <div className="my-3 mx-3 text-xl">
                         Courses for class 6 - 10
@@ -38,6 +41,7 @@ export function Courses({className}){
                         </svg>
                     </div>
                 </Card>
+                </Link>
             </div>
             </div>
     </div>

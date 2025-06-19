@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react"
 import { Card } from "./Card";
 import { Courses } from "./Courses";
 
@@ -27,7 +28,19 @@ export function Allen({className}){
                     </svg>
         </div>
         <div className="bg-gray-200 h-100 grid justify-items-center items-center mb-15">
-            <Card className={"w-230 cursor-pointer"}><img src={photo ? "Screenshot 2025-06-15 121326.png" : "Screenshot 2025-06-11 233657.png"} className="rounded-4xl h-50 w-230"></img></Card>
+            <Card className={"w-230 cursor-pointer"}>
+                <AnimatePresence mode="wait">
+                    <motion.img 
+                        src={photo ? "Screenshot 2025-06-15 121326.png" : "Screenshot 2025-06-11 233657.png"} 
+                        className="rounded-4xl h-50 w-230" 
+                        key={photo ? "img1" : "img2"}
+                        initial={{opacity: 0, scale: 0.95}}
+                        animate={{opacity: 1, scale: 1}}
+                        exit={{opacity:1, scale: 0.95}}
+                        transition={{duration: 0.5}}
+                        />
+                </AnimatePresence>
+            </Card>
         </div>
         <Courses className={""}/>
         </div>

@@ -57,10 +57,7 @@ const Task = ({task, icon, onclick}) => {
 
 const taskcomponent = tasks.map(tasky => <Task key={tasky.task} task={tasky.task} icon={tasky.icon} onclick={tasky.onclick}/>)
 
-export const Tasks = ({className=""}) => {
-
-  const [sidebar, setSideBar] = useState(false);
-
+export const Tasks = ({className="", sidebar, setSideBar}) => {
 	return <>
   <Card className={`${className} ${sidebar ? "visible" : "invisible"}`}>
     <button onClick={() => setSideBar(!sidebar)} className="visible"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">

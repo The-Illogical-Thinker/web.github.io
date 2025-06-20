@@ -4,10 +4,14 @@ import { Data } from "./Data"
 import { Time } from "./Time"
 import { Manage } from "./Manage"
 import { Apply } from "./Apply"
+import { useState } from "react"
 
 function App(){
+
+  const [sidebar, setSideBar] = useState(false);
+
   return <div className="grid grid-cols-10">
-    <Tasks className="col-span-1 h-screen grid items-start md:block justify-items-center md:justify-items-normal md:col-span-2 auto-rows-min"/>
+    <Tasks sidebar={sidebar} setSideBar={setSideBar} className={`${sidebar ? "col-span-1 md:col-span-2" : ""} h-screen grid items-start md:block justify-items-center md:justify-items-normal auto-rows-min`}/>
     <div className="col-span-8 grid grid-cols-11 auto-rows-min">
       <img src="goku.webp" alt="pic here" className="h-25 w-screen col-span-11"/>
       <Info className="col-span-3 mx-10  h-90 -my-5 "/>

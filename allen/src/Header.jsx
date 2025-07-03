@@ -1,4 +1,6 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
+import { AnimatePresence, motion} from "motion/react"
 
 export function Header({className}){
     return <div className={`${className} grid grid-cols-15 h-15 items-center sticky top-0 bg-white`}>
@@ -6,14 +8,12 @@ export function Header({className}){
         <Link to="/">
         <div className="cursor-pointer px-4 text-3xl text-blue-600 font-bold"> Allen </div>
         </Link>
-        <div className="cursor-pointer group relative">
-            <div>Courses</div>
-            <div className="absolute hidden group-hover:block  bg-white w-60 top-0 rounded-2xl">
+        <HeaderTopic label={"Courses"} sublabel={<div>
                 <Link to="/JEE"><div className="cursor-pointer hover:bg-gray-300 p-3">JEE</div></Link>
                 <Link to={"/NEET"}><div className="cursor-pointer hover:bg-gray-300 p-3">NEET</div></Link>
                 <Link to={"6th-10th"}><div className="cursor-pointer hover:bg-gray-300 p-3">Class 6th to 10th</div></Link>
-            </div>
-        </div>
+                </div>
+        } />
         <div className="cursor-pointer">Test Series</div>
         <div className="cursor-pointer">Results</div>
         <div className="cursor-pointer">Study Materials</div>
@@ -30,4 +30,20 @@ export function Header({className}){
             <button className="border-sky-500 rounded-3xl border-2 p-2 cursor-pointer hover:bg-gray-300">Login</button>
         </div>
     </div>
+}
+
+function HeaderTopic({label, sublabel}){
+    const [hover, setHover] = useState(false);
+    return <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className="cursor-pointer">
+        <div>{label}</div>
+        <AnimatePresence>
+            {hover ? <motion.div
+            className={`absolute bg-white top-15 w-50`} 
+            key="sublabel" 
+            initial={{opacity: 0, y: -10}}
+            animate={{opacity : 1, y: 10}}
+            exit={{opacity : 0, y: -10}}
+            transition={{duration: 0.3}}>{sublabel}</motion.div> : null}
+            </AnimatePresence>
+        </div>
 }

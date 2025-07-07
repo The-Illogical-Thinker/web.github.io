@@ -34,10 +34,10 @@ export function Allen({className}){
                         src={photo ? "Screenshot 2025-06-15 121326.png" : "Screenshot 2025-06-11 233657.png"} 
                         className="rounded-4xl h-50 w-230" 
                         key={photo ? "img1" : "img2"}
-                        initial={{opacity: 0, x: 100}} //scale to zoom in zoom out animation
+                        initial={{opacity: 0, x: "-100%"}} //scale to zoom in zoom out animation
                         animate={{opacity: 1, x: 0}} // x and y to feel like its coming from left-right or up-down
-                        exit={{opacity:1, x: -100}}
-                        transition={{duration: 0.5}}
+                        exit={{opacity:1, x: "100%"}}
+                        transition={{duration: 0.8, ease: "easeInOut"}}
                         />
                 </AnimatePresence>
             </Card>

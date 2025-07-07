@@ -14,7 +14,12 @@ export function Header({className}){
                 <Link to={"6th-10th"}><div className="cursor-pointer hover:bg-gray-300 p-3">Class 6th to 10th</div></Link>
                 </div>
         } />
-        <div className="cursor-pointer">Test Series</div>
+        <HeaderTopic label={"Test Series"} sublabel={<div>
+                <Link to="/JEE"><div className="cursor-pointer hover:bg-gray-300 p-3">NEET</div></Link>
+                <Link to={"/NEET"}><div className="cursor-pointer hover:bg-gray-300 p-3">JEE(Main + Advanced)</div></Link>
+                <Link to={"6th-10th"}><div className="cursor-pointer hover:bg-gray-300 p-3">JEE Main</div></Link>
+                </div>
+        } />
         <div className="cursor-pointer">Results</div>
         <div className="cursor-pointer">Study Materials</div>
         <div className="cursor-pointer">Scholarships</div>
@@ -34,16 +39,16 @@ export function Header({className}){
 
 function HeaderTopic({label, sublabel}){
     const [hover, setHover] = useState(false);
-    return <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className="cursor-pointer">
+    return <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setTimeout((() => setHover(false)), 1500)} className="cursor-pointer">
         <div>{label}</div>
         <AnimatePresence>
             {hover ? <motion.div
-            className={`absolute bg-white top-15 w-50`} 
+            className={`absolute bg-white top-20 w-50`} 
             key="sublabel" 
-            initial={{opacity: 0, y: -10}}
-            animate={{opacity : 1, y: 10}}
-            exit={{opacity : 0, y: -10}}
-            transition={{duration: 0.3}}>{sublabel}</motion.div> : null}
+            initial={{opacity: 0}}
+            animate={{opacity : 1}}
+            exit={{opacity : 0}}
+            transition={{duration: 0.2}}>{sublabel}</motion.div> : null}
             </AnimatePresence>
         </div>
 }

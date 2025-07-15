@@ -36,7 +36,7 @@ export function Allen({className}){
                     </svg>
         </div>
         <div className="bg-gray-200 h-100 grid justify-items-center items-center mb-15">
-            <Card className={"w-230 cursor-pointer grid justify-items-center"}>
+            <Card className={"w-230 cursor-pointer grid justify-items-center overflow-hidden"}>
                 <AnimatePresence mode="wait">
                     <motion.img 
                         draggable="false"
